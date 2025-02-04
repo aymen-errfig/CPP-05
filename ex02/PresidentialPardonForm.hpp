@@ -1,5 +1,5 @@
-#ifndef PRESIDENTIALPARDONFORM_HPP
-#define PRESIDENTIALPARDONFORM_HPP
+#ifndef PPF_HPP
+#define PPF_HPP
 
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
@@ -18,7 +18,7 @@ public:
 	~PresidentialPardonForm();
 
 	void beSigned(Bureaucrat &bur);
-	void PresidentialPardonForm::execute(Bureaucrat const & executor) const;
+	void execute(Bureaucrat const & executor) const;
 
 	PresidentialPardonForm &operator=(PresidentialPardonForm const &rhs);
 };

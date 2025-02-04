@@ -6,7 +6,7 @@
 /*   By: aerrfig <aerrfig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 10:28:09 by aerrfig           #+#    #+#             */
-/*   Updated: 2025/02/03 17:53:38 by aerrfig          ###   ########.fr       */
+/*   Updated: 2025/02/04 13:37:21 by aerrfig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ public:
 	int getGrade() const;
 
 	void signAForm(AForm &form);
+	void executeForm(AForm const & form);
 
 	class GradeTooHighException : public std::exception
 	{

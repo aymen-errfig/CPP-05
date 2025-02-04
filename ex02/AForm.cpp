@@ -6,7 +6,7 @@
 /*   By: aerrfig <aerrfig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 17:54:09 by aerrfig           #+#    #+#             */
-/*   Updated: 2025/02/03 18:37:16 by aerrfig          ###   ########.fr       */
+/*   Updated: 2025/02/04 11:57:43 by aerrfig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,11 @@ const char *AForm::GradeTooLowException::what() const throw()
 const char *AForm::GradeTooHighException::what() const throw()
 {
 	return "Grade Too High";
+}
+
+const char *AForm::FormIsNotSigned::what() const throw()
+{
+	return "Form isn't signed yet";
 }
 
 AForm &AForm::operator=(AForm const &rhs)
