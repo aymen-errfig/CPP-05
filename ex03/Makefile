@@ -13,8 +13,8 @@
 NAME = B
 FLAGS = #-Wall -Wextra -Werror -std=c++98
 CP = c++
-srcs = Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp main.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
-heads = Bureaucrat.hpp AForm.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp
+srcs = Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp main.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
+heads = Bureaucrat.hpp AForm.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp Intern.hpp
 objs = ${srcs:.cpp=.o}
 RM = rm -f
 

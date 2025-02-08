@@ -10,27 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
-
+#include "Intern.hpp"
+#include <iostream>
 int main()
 {
-    Bureaucrat bur(5);
-    ShrubberyCreationForm a = ShrubberyCreationForm("form a");
-    RobotomyRequestForm b = RobotomyRequestForm("form b");
-    PresidentialPardonForm c = PresidentialPardonForm("form c");
-
-    try
-    {
-        a.beSigned(bur);
-        b.beSigned(bur);
-        c.beSigned(bur);
-        bur.executeForm(c);
-    }
-    catch (std::exception &e)
-    {
-        std::cout << e.what();
-    }
+    Bureaucrat bur(1);
+    Intern someRandomIntern;
+    AForm *rrf;
+    rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
+    rrf->beSigned(bur);
+    bur.executeForm(*rrf);
 }
