@@ -40,7 +40,12 @@ AForm* Intern::makeForm(const std::string &formName, const std::string &formTarg
 		}
 	}
 	if (found > -1)
+	{
 		p = (this->*fnc[found])(formTarget);
+		std::cout << "Intern creates " << formName << "\n";
+	}
+	else
+		std::cout << "Intern can't create " << formName << "\n";
 	return (p);
 }
 

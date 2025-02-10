@@ -8,14 +8,12 @@
 
 class ShrubberyCreationForm : public AForm
 {
-bool _isSigned;
 public:
 	ShrubberyCreationForm();
 	ShrubberyCreationForm(const std::string &name);
 	ShrubberyCreationForm(ShrubberyCreationForm const &src);
 	~ShrubberyCreationForm();
 
-	void beSigned(Bureaucrat &bur);
 	void execute(Bureaucrat const & executor) const;
 
 	ShrubberyCreationForm &operator=(ShrubberyCreationForm const &rhs);

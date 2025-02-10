@@ -1,14 +1,14 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : _isSigned(false), AForm("ShrubberyCreationForm", 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137)
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &name) : _isSigned(false), AForm(name, 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &name) : AForm(name, 145, 137)
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src) : _isSigned(false), AForm(25, 5)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src) : AForm(25, 5)
 {
 	(void)src;
 }
@@ -17,19 +17,11 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 }
 
-void ShrubberyCreationForm::beSigned(Bureaucrat &bur)
-{
-	if (bur.getGrade() > this->getGradeToSign())
-		throw GradeTooLowException();
-	else
-		this->_isSigned = true;
-}
-
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
 	if (executor.getGrade() > this->getGradeToExecute())
 		throw GradeTooLowException();
-	else if (this->_isSigned == false)
+	else if (this->getIsSigned() == false)
 		throw FormIsNotSigned();
 	else
 {

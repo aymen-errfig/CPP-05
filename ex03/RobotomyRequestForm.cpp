@@ -1,14 +1,14 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : _isSigned(false), AForm("RobotomyRequestForm", 72, 45)
+RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45)
 {
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string &name) : _isSigned(false), AForm(name, 72, 45)
+RobotomyRequestForm::RobotomyRequestForm(const std::string &name) : AForm(name, 72, 45)
 {
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &src) : _isSigned(false), AForm(72, 45)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &src) : AForm(72, 45)
 {
 	(void)src;
 }
@@ -17,19 +17,11 @@ RobotomyRequestForm::~RobotomyRequestForm()
 {
 }
 
-void RobotomyRequestForm::beSigned(Bureaucrat &bur)
-{
-	if (bur.getGrade() > this->getGradeToSign())
-		throw GradeTooLowException();
-	else
-		this->_isSigned = true;
-}
-
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
 	if (executor.getGrade() > this->getGradeToExecute())
 		throw GradeTooLowException();
-	else if (this->_isSigned == false)
+	else if (this->getIsSigned() == false)
 		throw FormIsNotSigned();
 	else
 	{

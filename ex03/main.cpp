@@ -14,10 +14,22 @@
 #include <iostream>
 int main()
 {
-    Bureaucrat bur(1);
+    Bureaucrat bur(145);
+    Bureaucrat bur2(137);
+    Bureaucrat bur3(45);
     Intern someRandomIntern;
     AForm *rrf;
-    rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
-    rrf->beSigned(bur);
-    bur.executeForm(*rrf);
+    AForm *rrb;
+    rrf = someRandomIntern.makeForm("shrubbery creation", "Bender");
+    rrb = someRandomIntern.makeForm("robotomy request", "Joe");
+    if (rrf)
+    {
+        rrf->beSigned(bur);
+        bur2.executeForm(*rrf);
+    }
+    if (rrb)
+    {
+        rrb->beSigned(bur3);
+        bur3.executeForm(*rrb);
+    }
 }

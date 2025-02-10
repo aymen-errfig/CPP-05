@@ -21,7 +21,7 @@ class Bureaucrat;
 
 class AForm
 {
-	mutable bool _isSigned;
+	bool _isSigned;
 	const std::string _name;
 	const int _gradeToExecute;
 	const int _gradeToSign;
@@ -36,6 +36,7 @@ public:
 	bool getIsSigned() const;
 	int getGradeToSign() const;
 	int getGradeToExecute() const;
+	
 
 	void beSigned(Bureaucrat &bur);
 	virtual void execute(Bureaucrat const & executor) const = 0;
